@@ -1,0 +1,42 @@
+<%- include('../layout/header') %>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Add New User</h2>
+</div>
+
+<div class="container d-flex justify-content-center">
+    <form action="/add" method="post" enctype="multipart/form-data" class="p-4 shadow rounded bg-light" style="max-width: 500px; width: 100%;">
+        <div class="form-group mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" placeholder="Enter Name Here" required pattern="[a-zA-Z\s]+"
+                class="form-control custom-input" title="Please Enter a Valid Name" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" placeholder="Enter Email Here" required class="form-control custom-input" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="form-label" for="phone">Phone</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">+91</span>
+                </div>
+                <input type="tel" name="phone" class="form-control custom-input" id="phone" placeholder="Enter Phone"
+                    required pattern="[6-9][0-9]{9}" title="Please enter a 10-digit phone number starting with 6, 7, 8, or 9">
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="image" class="form-label">Select Image</label>
+            <input type="file" name="image" class="form-control-file" id="image" required>
+        </div>
+
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary">Add User</button>
+        </div>
+    </form>
+</div>
+
+<%- include('../layout/footer') %>
